@@ -1,6 +1,4 @@
 library(shiny)
-library(shinyShortcut)
-# shinyShortcut("E:\\R_Process\\R_Intermediate Files\\TREND_REPORT_WV\\",.Platform$OS.type,gitIgnore = F)
 library(sqldf)
 ##_______________________________________
 ### Sourcing functions required for processing
@@ -58,13 +56,12 @@ server <- function(input, output) {
   
   observeEvent(input$runButton,{
     # browser()
+    ##trend_mis is the function which performs action using the input variables
     trend_mis(input$Country,input$Subcategory)
   })
 })
 
 # shinyApp(ui = ui, server = server)
-# folder_address = "E:\\R_Process\\R_Intermediate Files\\TREND_REPORT_WV"
-# setwd("E:\\R_Process\\R_Intermediate Files\\TREND_REPORT_WV")
 
 runApp(my_app, launch.browser = TRUE)
 
